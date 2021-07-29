@@ -1,0 +1,2 @@
+  method IF_EX_WF_SUBSTITUTE~DELETE_SUBSTITUTE.
+  endmethod.
