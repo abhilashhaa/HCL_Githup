@@ -1,28 +1,15 @@
-steps:
-  githubPublishRelease:
-    addClosedIssues: true
-    addDeltaToLastRelease: true
-    excludeLabels:
-      - 'discussion'
-      - 'duplicate'
-      - 'invalid'
-      - 'question'
-      - 'wontfix'
-      - 'stale'
-    owner: 'SAP'
-    repository: 'jenkins-library'
-    releaseBodyHeader: ''
-  githubCreatePullRequest:
-    base: master
-    owner: 'SAP'
-    repository: 'jenkins-library'
-    labels:
-      - 'REVIEW'
-      - 'go-piper'
-    assignees:
-      - 'marcusholl'
-      - 'daniel-kurzynski'
-      - 'fwilhe'
-      - 'CCFenner'
-      - 'OliverNocon'
-      - 'nevskrem'
+gctsDeploy(
+  script: this,
+  host: 'https://hcluks4hana.hcldigilabs.com:8001/',
+  client: '200',
+  abapCredentialsId: 'ABAPUserPasswordCredentialsId',
+  repository: 'HCL-Githup',
+  remoteRepositoryURL: "https://github.com/abhilashhaa/HCL_Githup.git",
+  role: 'SOURCE',
+  vSID: 'FEF',
+  branch: 'master',
+  commit: 'commit',
+  scope: 'scope',
+  rollback: false,
+  configuration: [dummyConfig: 'dummyval']
+   
