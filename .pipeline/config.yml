@@ -1,15 +1,25 @@
-gctsDeploy(
-  script: this,
-  host: 'https://hcluks4hana.hcldigilabs.com:8001/',
-  client: '200',
-  abapCredentialsId: 'ABAPUserPasswordCredentialsId',
-  repository: 'HCL-Githup',
-  remoteRepositoryURL: "https://github.com/abhilashhaa/HCL_Githup.git",
-  role: 'SOURCE',
-  vSID: 'FEF',
-  branch: 'master',
-  commit: 'commit',
-  scope: 'scope',
-  rollback: false,
-  configuration: [dummyConfig: 'dummyval']
+
+
+
+            steps 
+            stage('Build') 
+                githubCreatePullRequest script: this
+                host: 'https://hcluks4hana.hcldigilabs.com:8001/',
+                client: '200',
+                abapCredentialsId: 'ABAPUserPasswordCredentialsId',
+                repository: 'HCL-Githup',
+                remoteRepositoryURL: "https://github.com/abhilashhaa/HCL_Githup.git",
+               
+                gctsDeploy(
+                 script: this,
+                host: 'https://hclutl1909.hcldigilabs.com:8001/',
+                client: '200',
+                abapCredentialsId: 'ABAPUserPasswordCredentialsId',
+                repository: 'HCL-Githup',
+                remoteRepositoryURL: "https://github.com/abhilashhaa/HCL_Githup.git",
+                role: 'SOURCE',
+                vSID: 'FEF',
+                
+                
+               
    
