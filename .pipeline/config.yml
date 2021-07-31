@@ -10,7 +10,7 @@
                 remoteRepositoryURL: "https://github.com/abhilashhaa/HCL_Githup.git",
    
                
-               
+        stage('Test')        
              steps:  
                 gctsDeploy:
                  script: this,
