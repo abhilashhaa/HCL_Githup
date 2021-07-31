@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                 echo 'Building..'
+                 
                 githubCreatePullRequest script: this
                 host: 'https://hcluks4hana.hcldigilabs.com:8001/',
                 client: '200',
@@ -21,6 +21,7 @@ pipeline {
                 remoteRepositoryURL: "https://github.com/abhilashhaa/HCL_Githup.git",
                 role: 'SOURCE',
                 vSID: 'FEF',
+                    echo 'Building..'
             }
         }
         stage('Test') {
