@@ -19,7 +19,7 @@
                 abapCredentialsId: 'ABAPUserPasswordCredentialsId',
                 repository: 'HCL-Githup',
                 remoteRepositoryURL: "https://github.com/abhilashhaa/HCL_Githup.git",
-                role: 'SOURCE',
+                role: 'Provided',
                 vSID: 'FEF',
                 
                 
