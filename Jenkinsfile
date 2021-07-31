@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                gctsDeploy script: this
+                
             }
         }
     }
