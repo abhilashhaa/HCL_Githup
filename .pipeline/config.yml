@@ -1,4 +1,10 @@
 
+abapAddonAssemblyKitCheckPV script: this
+
+steps:
+  abapAddonAssemblyKitCheckCVs:
+    abapAddonAssemblyKitCredentialsId: 'abapAddonAssemblyKitCredentialsId',
+    addonDescriptorFileName: 'addon.yml'
 
  stage('Build') 
             steps:
