@@ -1,6 +1,4 @@
-@Library('piper-library-os') _
 
-abapEnvironmentPipeline script: this
 
 pipeline {
     agent any
@@ -12,11 +10,17 @@ pipeline {
                 echo 'Building..'
             }
         }
-        stage('Test') {
+        stage('ATC') {
             steps {
                 echo 'Testing..'
+         
+                
            
             }
-        }
+       
+       }
+   
+   
     }
+   
 }
