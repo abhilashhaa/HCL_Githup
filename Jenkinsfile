@@ -14,7 +14,7 @@ pipeline {
                 {
                     steps{
                         
-                             githubCreatePullRequest script: this
+                            
                     }
         }
         
