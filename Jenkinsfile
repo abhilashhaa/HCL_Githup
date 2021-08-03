@@ -9,26 +9,17 @@ pipeline {
                  
                 echo 'Building..'
             }
-            Stages {
-                stage('PullRequest')
-                {
-                    echo 'Pulling..'
-                        
-                            
-                    }
         }
-        
-        stage('ATC') {
+        stage('Test') {
             steps {
                 echo 'Testing..'
-         
-                
-           
             }
-       
-       }
-   
-   
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+                
+            }
+        }
     }
-   
 }
