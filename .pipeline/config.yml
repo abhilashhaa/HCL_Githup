@@ -22,9 +22,7 @@
                 role: 'Provided',
                 vSID: 'FEF',
                 
-                stage('ATC')
-                steps:
-                atcConfig: 'atcConfig.yml'
+               
                 
                
    
