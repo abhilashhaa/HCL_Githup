@@ -9,10 +9,10 @@ pipeline {
                  
                 echo 'Building..'
             }
-            Stages{
+            Stages {
                 stage('PullRequest')
                 {
-                    steps{
+                    echo 'Pulling..'
                         
                             
                     }
