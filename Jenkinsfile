@@ -9,7 +9,15 @@ pipeline {
                  
                 echo 'Building..'
             }
+            Stages{
+                stage('PullRequest')
+                {
+                    steps{
+                        
+                             githubCreatePullRequest script: this
+                    }
         }
+        
         stage('ATC') {
             steps {
                 echo 'Testing..'
