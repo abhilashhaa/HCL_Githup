@@ -1,10 +1,4 @@
 
-abapAddonAssemblyKitCheckPV script: this
-
-steps:
-  abapAddonAssemblyKitCheckCVs:
-    abapAddonAssemblyKitCredentialsId: 'abapAddonAssemblyKitCredentialsId',
-    addonDescriptorFileName: 'addon.yml'
 
  stage('Build') 
             steps:
@@ -28,7 +22,8 @@ steps:
                 role: 'Provided',
                 vSID: 'FEF',
                 
-                ATC:
+                stage('ATC')
+                steps:
                 atcConfig: 'atcConfig.yml'
                 
                
