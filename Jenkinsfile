@@ -1,25 +1,39 @@
 
+@Library('piper-library-os')_ 
 
-pipeline {
-    agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                 
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-                
-            }
-        }
-    }
+node () 
+{
+  
+    stage('DeployCommit') 
+    gctsDeploy(
+  script: this,
+  host: 'https://hclutl1909.hcldigilabs.com:8001',
+  abapCredentialsId: 'ABAPUserPasswordCredentialsId',
+  repository: 'OpenSAP',
+  remoteRepositoryURL: "https://github.com/abhilashhaa/OpenSAPDemo.git",
+  role: 'TARGET',
+  vSID: 'FEF',
+  commit: 'c630005',
+  rollback: false,
+  
+)  
+  
+  stage('RunUnitTest') 
+    gctsExecuteABAPUnitTests(
+      script: this,
+      host: 'hcluks4hana.hcldigilabs.com:8001',
+      client: '200',
+      abapCredentialsId: 'AbapSystem',
+      repository: 'OpenSAP'
+  )
+       
+  
+    stage('RollbackCommit') 
+    gctsRollback(
+      script: this,
+      host: "hcluks4hana.hcldigilabs.com:8001",
+      client: "200",
+      abapCredentialsId: 'AbapSystem',
+      repository: "OpenSAP"
+  )
 }
